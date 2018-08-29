@@ -36,7 +36,7 @@ def calculateTrajectory(v0, theta, g = 9.8, npts = 100):
             theta : float 
                 intial angle (in degrees): must be in range [0,90]
             g : float, optional
-                acceleration due to gravity (in meters/second): must be > 0, default value 9.8                 
+                acceleration due to gravity (in meters/second^2): must be > 0, default value 9.8                 
             npts : int, optional
                 number of points to calculate along the trajectory
         Returns
@@ -68,7 +68,7 @@ def calculateIntersectionWithGround(v0, theta, g = 9.8):
             theta : float 
                 intial angle (in degrees): must be in range [0,90]
             g : float, optional
-                acceleration due to gravity (in meters/second): must be > 0, default value 9.8
+                acceleration due to gravity (in meters/second^2): must be > 0, default value 9.8
         Returns
         -------
             t : float
