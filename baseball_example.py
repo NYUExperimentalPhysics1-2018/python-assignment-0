@@ -14,6 +14,7 @@ Baseball example:
 import numpy as np
 import matplotlib.pyplot as plt
 
+EARTH_GRAVITY = 9.8
 
 def plotUserTrajectory():
     """prompts user to enter velocity and angle of a projectile then plots the path
@@ -24,7 +25,7 @@ def plotUserTrajectory():
     [x,y] = calculateTrajectory(v0, theta)
     plt.plot(x,y)
     
-def calculateTrajectory(v0, theta, g = 9.8, npts = 100):
+def calculateTrajectory(v0, theta, g = EARTH_GRAVITY, npts = 100):
     """calculates the trajectory of a projectile 
        
         neglects air resistance
@@ -36,7 +37,7 @@ def calculateTrajectory(v0, theta, g = 9.8, npts = 100):
             theta : float 
                 intial angle (in degrees): must be in range [0,90]
             g : float, optional
-                acceleration due to gravity (in meters/second^2): must be > 0, default value 9.8                 
+                acceleration due to gravity (in meters/second^2): must be > 0, default value EARTH_GRAVITY                 
             npts : int, optional
                 number of points to calculate along the trajectory
         Returns
@@ -56,7 +57,7 @@ def calculateTrajectory(v0, theta, g = 9.8, npts = 100):
     return (x,y)
 
 
-def calculateIntersectionWithGround(v0, theta, g = 9.8):
+def calculateIntersectionWithGround(v0, theta, g = EARTH_GRAVITY):
     """ finds the next time of intersection with the ground for projectile motion
     
         neglects air resistance
@@ -68,7 +69,7 @@ def calculateIntersectionWithGround(v0, theta, g = 9.8):
             theta : float 
                 intial angle (in degrees): must be in range [0,90]
             g : float, optional
-                acceleration due to gravity (in meters/second^2): must be > 0, default value 9.8
+                acceleration due to gravity (in meters/second^2): must be > 0, default value EARTH_GRAVITY
         Returns
         -------
             t : float
